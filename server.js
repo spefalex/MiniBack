@@ -105,6 +105,7 @@ apiRoutes.get("/users", function(req, res) {
 });
 
 app.post("/authenticate", function(req, res) {
+  res.header("Access-Control-Allow-Origin", "*");
   // trouver user
   User.findOne(
     {
