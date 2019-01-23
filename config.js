@@ -1,6 +1,6 @@
 module.exports = {
 
     'secret': 'pepexe',
-    'database': 'mongodb://localhost:27017/MyAppli'
+    'database': 'mongodb://mongo:27017/MyAppli'
 
 };

@@ -1,0 +1,26 @@
+
+bakcend_container:
+ container_name: bakcend_content
+ restart: always
+ ports:
+   - "8888:8888"
+ command: | 
+  bash -c "
+  npm install 
+  node server.js"
+ working_dir: /okrProject 
+ volumes:
+   - "./:/okrProject"
+   - "./package.json:/okrProject/package.json"
+   
+ image: spefalex/okrnode:1.0.1  
+ links:
+  - mongo:mongo
+
+mongo:
+  container_name: mongo-storage
+  image: mongo:latest
+  volumes:
+      - ./data:/data/db
+  ports:
+   - "28018:27017"
